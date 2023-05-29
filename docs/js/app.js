@@ -13,15 +13,14 @@ function submitForm(e){
     let message = document.getElementById("message").value;
     
     if (name === "" || email === "" || message === "") {
-        alert("Por favor, completa todos los campos del formulario.");
-      
+        showErrorModal();        
     } else {       
         contactForm.reset();
-        showModal(name);
+        showSuccessModal(name);
       }
 }
 
-function showModal(nombre){
+function showSuccessModal(nombre){
     
     let backgroudModal = document.createElement("div");
     backgroudModal.className = "modal-bg";
@@ -39,6 +38,27 @@ function showModal(nombre){
 
 
     document.getElementById("body").classList.add("no-scroll");
+}
+
+function showErrorModal(){
+
+    let backgroudModal = document.createElement("div");
+    backgroudModal.className = "modal-bg";
+    backgroudModal.id = "modal-bg";
+
+    let modal = document.createElement("div");
+    modal.className = "modal-content";
+
+    document.getElementById("contact").appendChild(backgroudModal);
+    
+    backgroudModal.appendChild(modal);
+    modal.insertAdjacentHTML("beforeend", `<h3>Please complete all the fields in the form</h3>`);
+    modal.insertAdjacentHTML("beforeend", "<p>All the fields requested in the form are mandatory.</p>");
+    modal.insertAdjacentHTML("beforeend", "<div class='contact-button button-modal'><a href='javascript:hideModal()'>Got it!</a></div>");
+
+
+    document.getElementById("body").classList.add("no-scroll");
+    
 }
 
 function hideModal(){
