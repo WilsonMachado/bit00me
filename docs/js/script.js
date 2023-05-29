@@ -1,3 +1,6 @@
+///* Animaciones en de las letas de saludo 
+
+
 const spans = document.querySelectorAll('h1 span')
 
 spans.forEach(span => span.addEventListener('mouseover', function(e){
@@ -7,6 +10,8 @@ spans.forEach(span => span.addEventListener('mouseover', function(e){
 spans.forEach(span => span.addEventListener('mouseout', function(e){
     span.classList.remove('animated', 'rubberBand')
 }))
+
+///* Animación de las barras de skills al hacer scroll
 
 const htmlBar = document.querySelector('.bar-html')
 const cssBar = document.querySelector('.bar-css')
@@ -28,6 +33,8 @@ const scene = new ScrollMagic.Scene({
 
 .setTween(t1)
 .addTo(controller)
+
+///* Funciones para las categorías de work
 
 const showRequiredCategory = event => {
     
