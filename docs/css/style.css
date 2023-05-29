@@ -453,6 +453,16 @@ footer p{
   padding: 20px;
 }
 
+.button-modal{
+  text-align: center;
+  margin: auto;
+}
+
+.modal-content h3{
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
 .no-scroll { /* Agregar esta propiedad al body para bloquear el scroll mientras el modal esté visible */
   overflow: hidden;
 }
